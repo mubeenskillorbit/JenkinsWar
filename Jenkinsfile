@@ -1,5 +1,6 @@
 pipeline {
     agent any
+    def TOMCAT_DIR 'E:\softwares\apache-tomcat-8.5.37\webapps'
     stages {
         stage('Build')
         {
@@ -11,7 +12,9 @@ pipeline {
         stage('Deploy')
         {
             steps {
-                bat 'echo "Done! Now get some docker or server to deploy"'
+                bat 'echo "Deploying to TOMCAT'
+                bat 'echo ${TOMCAT_DIR}'
+                bat 'copy target/JenkinsWar.war'
             }
         }
     }
