@@ -5,16 +5,16 @@ pipeline {
         stage('Build')
         {
             steps {
-                sh 'echo "**** BUILD STARTED ****"'
+                bat 'echo "**** BUILD STARTED ****"'
                 bat 'mvn clean install' 
             }
         }
         stage('Deploy')
         {
             steps {
-                sh 'echo "Deploying to TOMCAT'
-                sh 'echo E:\\softwares\\apache-tomcat-8.5.37\\webapps'
-                sh 'copy target/JenkinsWar.war E:\\softwares\\apache-tomcat-8.5.37\\webapps'
+                bat 'echo "Deploying to TOMCAT'
+                bat 'echo E:\\softwares\\apache-tomcat-8.5.37\\webapps'
+                bat 'copy target/JenkinsWar.war E:\\softwares\\apache-tomcat-8.5.37\\webapps'
             }
         }
     }
