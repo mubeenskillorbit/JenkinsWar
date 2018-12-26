@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    def TOMCAT_DIR 'E:\softwares\apache-tomcat-8.5.37\webapps'
+    def TOMCAT_DIR 'E:\\softwares\\apache-tomcat-8.5.37\\webapps'
     stages {
         stage('Build')
         {
