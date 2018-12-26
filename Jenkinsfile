@@ -1,6 +1,6 @@
 pipeline {
     agent any
-    //String TOMCAT_DIR 'E:\\softwares\\apache-tomcat-8.5.37\\webapps'
+    def TOMCAT_DIR = 'E:\\softwares\\apache-tomcat-8.5.37\\webapps'
     stages {
         stage('Build')
         {
@@ -13,8 +13,8 @@ pipeline {
         {
             steps {
                 bat 'echo "Deploying to TOMCAT'
-                bat 'echo E:\\softwares\\apache-tomcat-8.5.37\\webapps'
-                bat 'xcopy target\\JenkinsWar.war E:\\softwares\\apache-tomcat-8.5.37\\webapps'
+                bat 'echo ${TOMCAT_DIR}'
+                bat 'xcopy target\\JenkinsWar.war ${TOMCAT_DIR}'
             }
         }
     }
