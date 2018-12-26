@@ -16,8 +16,8 @@ pipeline {
         {
             steps {
                 bat 'echo "Deploying to TOMCAT'
-                bat 'echo ${TOMCAT_DIR}'
-                bat 'xcopy target\\JenkinsWar.war ${TOMCAT_DIR}'
+                bat 'echo %TOMCAT_DIR%'
+                bat 'xcopy target\\JenkinsWar.war %TOMCAT_DIR%'
             }
         }
     }
