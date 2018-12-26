@@ -1,9 +1,17 @@
 pipeline {
-    agent { docker 'maven:3.3.3' }
+    agent any
     stages {
-        stage('build') {
+        stage('Build')
+        {
             steps {
-                bat 'mvn --version'
+                bat 'echo "**** BUILD STARTED ****"'
+                bat 'mvn clean install' 
+            }
+        }
+        stage('Deploy')
+        {
+            steps {
+                bat 'echo "Done! Now get some docker or server to deploy"'
             }
         }
     }
