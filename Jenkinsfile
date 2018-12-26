@@ -14,7 +14,7 @@ pipeline {
             steps {
                 bat 'echo "Deploying to TOMCAT'
                 bat 'echo E:\\softwares\\apache-tomcat-8.5.37\\webapps'
-                bat 'copy target/JenkinsWar.war E:\\softwares\\apache-tomcat-8.5.37\\webapps'
+                bat 'xcopy target\JenkinsWar.war E:\\softwares\\apache-tomcat-8.5.37\\webapps'
             }
         }
     }
